@@ -1,107 +1,86 @@
-// enum Status {
-//   Success = "success",
-//   Error = "error",
-//   Pending = "pending"
+// class BankAccount {
+//     private balance: number = 0
+//     deposit(amount: number) {
+//         if (typeof amount !== "number" || amount < 0) {
+//             throw new Error("amount is not valid!")
+//         }
+//         this.balance += amount
+        
+//     }
+//     withdraw(amount: number) {
+//         if (typeof amount !== "number" || amount < 0) {
+//             throw new Error("amount is not valid!")
+//         }
+//         this.balance -= amount
+//     }
+//     myBalance() {
+//         console.log(this.balance);
+//     }
+//     get my_balance(): number {
+//         return this.balance
+//     }
+//     set setBalance(amount: number) {
+//         if (typeof amount !== 'number' || amount < 0) {
+//             console.log("amount is not valid!");
+//             return
+//         }
+//         this.balance += amount
+//     }
 // }
+// const account = new BankAccount()
+// account.deposit(100000)
+// account.withdraw(100)
+// account.setBalance = 100
+// account.myBalance()
 
-// let orderStatus: Status = Status.Success
-
-
-
-
-// let direction: "up" | "down" | "left" | "right"
-
-// direction = "up"   // ✅
-// direction = "down" // ✅
-
-
-// type User = { name: "string" }
-// type Admin = { role: "string" }
-// type AdminUser = User & Admin & {
-//   isActive: boolean
-// }
-
-
-// function printValue<T>(value: T): T {
-//   return value
-// }
-// const res = printValue("coder")
-// const res1 = printValue({name: 'coder', age: 22})
-
-
-// function getFirstItem<T>(items: T[]): T {
-//   return items;
-// }
-
-// const first = getFirstItem([10, 20, 30]);
-// const firstName = getFirstItem(["Rayhan", "Coder"]);
-
-
-// const users: number[] = [1, 2, 3, 4, 5]
-
-// const res: string[] = users.map(v => v.toString())
-// console.log(res);
-
-
-// const car: {name: string} = {
-//   name: 'js'
-// }
-// const cloneCar: {name: string} = { ...car }
-// console.log(cloneCar.name);
-
-
-// let anything: any
-// anything = "coder"
-// console.log((anything as string).toUpperCase());
-// type UnionType = Type1 | Type2 | Type3;
-
-// // Use Case 1: Flexible Function Arguments
-// function formatValue(value: string | number): string {
-//   if (typeof value === "string") {
-//     return value.toUpperCase();
-//   }
-//   return value.toFixed(2);
-// }
-
-// console.log(formatValue("hello")); // HELLO
-// console.log(formatValue(42));      // 42.00
-// console.log(formatValue(true)); // Error: Argument of type 'boolean' is not assignable to parameter of type 'string | number'.
-
-// Use Case 2: API Responses
-// type ErrorResponse = {
-//   error: true;
-//   message: string;
-// };
-
-// type SuccessResponse = {
-//   error: false;
-//   data: string;
-// };
-
-// type ApiResponse = ErrorResponse | SuccessResponse;
-
-// function handleResponse(response: ApiResponse) {
-//   if (response.error) {
-//     console.error(response.message);
-//   } else {
-//     console.log(response.data);
+// class Animal {
+//   constructor(public name: string) {}
+//   move() {
+//     console.log(`${this.name} is moving`);
 //   }
 // }
 
-
-type User = {
-    id: number;
-  name: string;
-  age: number;
-};
-
-// function CreateUser(name: string, age: number): User {
-//   return {
-//       id: 1,
-//     name,
-//     age
+// class Dog extends Animal {
+//     constructor(public name: string) {
+//         super(name)
+//     }
+//   bark() {
+//     console.log(`${this.name} is barking`);
 //   }
 // }
-// const user = CreateUser("Rayhan", 22);
-// console.log(user);
 
+// const dog = new Dog("Rex");
+// console.log(dog.name);
+// dog.move(); // Rex is moving
+// dog.bark(); // Rex is barking
+
+
+// class Shape {
+//   area(): number {
+//     return 0;
+//   }
+// }
+
+// class Rectangle extends Shape {
+//   constructor(private width: number, private height: number) {
+//     super();
+//   }
+//   area(): number {
+//     return this.width * this.height;
+//   }
+// }
+
+// class Circle extends Shape {
+//   constructor(public radius: number) {
+//     super();
+//   }
+//   area(): number {
+//     return Math.PI * this.radius ** 2;
+//     }
+//     static PI: number = 3.14
+// }
+
+// const shapes: Shape[] = [new Rectangle(10, 20), new Circle(5)];
+// shapes.forEach((shape) => console.log(shape.area()));
+
+// console.log(Circle.PI)

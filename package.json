@@ -3,19 +3,19 @@
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
-"scripts": {
-  "dev": "nodemon --watch src --exec ts-node src/main.ts",
-  "build": "tsc",
-  "start": "node dist/main.js"
-}
-,
+  "scripts": {
+    "dev": "nodemon --watch src --exec ts-node src/main.ts",
+    "build": "tsc",
+    "start": "node dist/main.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
     "nodemon": "^3.1.11",
-    "ts-node": "^10.9.2"
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0"
   },
   "devDependencies": {
     "typescript": "^5.9.3"

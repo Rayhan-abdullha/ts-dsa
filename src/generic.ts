@@ -22,3 +22,13 @@ function handleResponse<T>(response: ApiResponse<T>) {
 
 handleResponse({ data: "Hello", error: false, message: "Success" });
 handleResponse({ data: "Hello", error: true, message: "Some error" });
+
+
+function meargeObject<T, U>(objA: T, objB: U) {
+  return {
+    ...objA,
+    ...objB 
+  }
+}
+const obj = meargeObject({ name: "Rayhan" }, { age: 22 })
+console.log(obj);
