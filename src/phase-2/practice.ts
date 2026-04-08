@@ -28,3 +28,30 @@
 //     return num.reduce((acc, curr) => acc += curr ,0)
 // }
 // console.log(sum(1,2,3,4,5))
+
+// function process(
+//   a: number,
+//   b: number,
+//   callback: (x: number, y: number) => number
+// ) {
+//     const res = callback(a, b)
+//     console.log(res)
+// }
+
+// function fb(a: number, b: number): number {
+//     return a + b
+// }
+// process(1, 2, fb)
+// type Person = {
+//     name: string
+//     age: number
+// }
+// type Sakib = Person & {
+//     occ: string
+// }
+// const sakib: Sakib = {
+//     name: "sakib",
+//     age: 37,
+//     occ: "crickter"
+// }
+// console.log(sakib)
