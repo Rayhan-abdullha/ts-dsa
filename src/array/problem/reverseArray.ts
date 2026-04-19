@@ -28,8 +28,23 @@ const str = "hello world"
 
 // console.log(revStr1("hello"));
 
-const revStr2 = (str: string) => {
-    return str.split('').reverse().join('')
-}
-const res = revStr2("hello world")
-console.log(res)
+// const revStr2 = (str: string) => {
+//     return str.split('').reverse().join('')
+// }
+// const res = revStr2("hello world")
+// console.log(res)
+
+const revStr3 = (str: string): string => {
+    const arr = str.split("");
+    let left = 0;
+    let right = arr.length - 1;
+
+    while (left < right) {
+        [arr[left], arr[right]] = [arr[right]!, arr[left]!];
+        left++;
+        right--;
+    }
+
+    return arr.join("");
+};
+console.log(revStr3("hello"));
