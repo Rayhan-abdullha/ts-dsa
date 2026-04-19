@@ -1,18 +1,6 @@
 const arr = [1, 2, 3, 4, 5]
 const arr2 = [6, 7, 8, 9, 10]
 
-// function mergeTwoSortedArray (arr: number[], arr1: number[]){
-//     if (arr.length == 0){
-//         return arr
-//     }
-//     if (arr1.length == 0){
-//         return arr1
-//     }
-//     return [...arr, ...arr2]
-// }
-// const res = mergeTwoSortedArray(arr, arr2)
-// console.log(res)
-
 
 // best interview solution
 function mergeTwoSortedArray(arr: number[], arr1: number[]) {
