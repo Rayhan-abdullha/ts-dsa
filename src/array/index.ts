@@ -1,1 +1,2 @@
-import './basic/index'
+// import './basic/index'
+import './problem/reverseArray'
