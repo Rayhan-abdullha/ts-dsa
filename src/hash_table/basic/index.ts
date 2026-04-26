@@ -25,3 +25,4 @@ user.address.city = 'Othertown'; // Update city
 const m = new Map()
 m.set("a", 333)
 m.set("a", 3333)
+m.set("a", 33333)
