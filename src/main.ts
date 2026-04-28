@@ -4,4 +4,6 @@
 // import './phase-3/practice'
 
 // import './array/index'
-import './hash_table/index'
+// import './hash_table/index'
+// import './linkedlist/index'
+import './stack_and_queue/index'
