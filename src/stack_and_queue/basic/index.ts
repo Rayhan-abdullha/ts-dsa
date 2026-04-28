@@ -169,7 +169,7 @@ class QueueLinkedList<T>{
         return this.size <= 0 ? true : false
     }
     print(){
-        console.log(this.head)
+        return this.head
     }
 }
 const queueLinkedList = new QueueLinkedList<number>()
