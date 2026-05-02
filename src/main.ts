@@ -8,5 +8,6 @@
 // import './linkedlist/index'
 // import './stack_and_queue/index'
 
+// import './practice/practice'
+// import './practice/union_intresection'
 import './practice/practice'
-import './practice/union_intresection'
