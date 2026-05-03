@@ -8,3 +8,4 @@ function merge<T, U>(obj1: T, obj2: U): T & U {
 
 const merged = merge({ name: "Rayhan" }, { age: 25 });
 // Type: { name: string; age: number }
+

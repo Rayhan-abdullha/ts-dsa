@@ -10,4 +10,5 @@
 
 // import './practice/practice'
 // import './practice/union_intresection'
-import './practice/practice'
+// import './practice/practice'
+import './task/typescript-mastary/solution'
