@@ -11,5 +11,4 @@ class Student extends User {
     
 }
 const res = new Student()
-res.print('rayhan')
 
