@@ -12,4 +12,4 @@
 // import './practice/union_intresection'
 // import './practice/practice'
 // import './task/typescript-mastary/solution'
-import './oop/class'
+// import './oop/class'

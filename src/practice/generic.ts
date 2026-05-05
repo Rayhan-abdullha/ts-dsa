@@ -32,3 +32,17 @@ function myFunc(cb: CB){
 myFunc(function(a: number, b: number){
     return a + b
 })
+
+
+// constraints
+type IUser = {
+    name: string
+}
+function getName<T extends IUser>(user: T): string {
+    return user.name
+}
+const user = {
+    name: "rayhan",
+    age: 28
+}
+getName(user)
