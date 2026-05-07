@@ -13,3 +13,105 @@
 // import './practice/practice'
 // import './task/typescript-mastary/solution'
 // import './oop/class'
+
+/*
+Write a generic function getProperty that takes an object and a key, then returns the value of that key. Use constraints to ensure the key exists on the object.
+
+// Sample Input:
+const user = { id: 1, name: "John Doe", age: 21 };
+getProperty(user, "name");
+
+// Sample Output:
+"John Doe";
+
+*/
+
+class Node<T>{
+    val: T
+    left: Node<T> | null
+    right: Node<T> | null
+    constructor(val: T){
+        this.val = val
+        this.left = null
+        this.right = null
+    }
+}
+class BinarySearchTree<T> {
+    root: Node<T> | null
+    constructor(){
+        this.root = null
+    }
+    insert(val: T){
+        const newNode = new Node<T>(val)
+        if (!this.root){
+            this.root = newNode
+            return this
+        }
+        let currentNode = this.root
+        while (true){
+            if (currentNode.val < val){
+                if (currentNode.right === null){
+                    currentNode.right = newNode
+                    return this
+                } 
+                currentNode = currentNode.right
+            } else {
+                if (currentNode.left === null){
+                    currentNode.left = newNode
+                    return
+                }
+                currentNode = currentNode.left
+            }
+        }
+    }
+    search(val: T){
+
+    }
+}
+
+
+const bst = new BinarySearchTree<number>()
+bst.insert(10)
+bst.insert(20)
+bst.insert(1)
+bst.insert(2)
+bst.insert(200)
+// console.log(bst)
+function maxFreqSum(s: string): number {
+    const vowels = new Set(["a", "e", "i", "o", "u"]);
+
+    const vowelFreq = new Map<string, number>();
+    const consonantFreq = new Map<string, number>();
+
+    // Count frequencies
+    for (const ch of s) {
+        if (vowels.has(ch)) {
+            vowelFreq.set(ch, (vowelFreq.get(ch) ?? 0) + 1);
+        } else {
+            consonantFreq.set(ch, (consonantFreq.get(ch) ?? 0) + 1);
+        }
+    }
+
+    let maxVowel = 0;
+    let maxConsonant = 0;
+
+    // Find max vowel frequency
+    for (const freq of vowelFreq.values()) {
+        maxVowel = Math.max(maxVowel, freq);
+    }
+
+    // Find max consonant frequency
+    for (const freq of consonantFreq.values()) {
+        maxConsonant = Math.max(maxConsonant, freq);
+    }
+        console.log('consonent', maxConsonant)
+        console.log('vowel', maxVowel)
+
+    console.log(maxVowel)
+    console.log(maxConsonant)
+    return maxVowel + maxConsonant;
+}
+
+// console.log(maxFreqSum("og"));          // 2
+// console.log(maxFreqSum("successes"));       // 1
+console.log(maxFreqSum("aeiaeia"));      // 6
