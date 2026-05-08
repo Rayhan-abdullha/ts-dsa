@@ -81,13 +81,16 @@ bst.insert(200)
 // console.log(maxFreqSum("og"));          // 2
 // console.log(maxFreqSum("successes"));       // 1
 
-function missingNumber(nums: number[]){
-    let misNumber: number[] = []
-    for (const num of nums){
-        misNumber[num] = num as number
+const arr = [-7, 2, 3, 8, 6, 6 ,75, 38, 3, 2]
+function findSecondLargestNumber(arr: number[]){
+    let stack = []
+    let findMostMax = Math.max(...arr)
+    let secondMax = 0
+    for (const n of arr){
+        if (n > secondMax && n !== findMostMax){
+            secondMax = n
+        }
     }
-    for (const [key, val] of misNumber.entries()){
-       console.log(key, val)
-    }
-};
-missingNumber([3, 0, 1])
+    return secondMax
+}
+console.log(findSecondLargestNumber(arr))
