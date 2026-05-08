@@ -77,41 +77,17 @@ bst.insert(1)
 bst.insert(2)
 bst.insert(200)
 // console.log(bst)
-function maxFreqSum(s: string): number {
-    const vowels = new Set(["a", "e", "i", "o", "u"]);
-
-    const vowelFreq = new Map<string, number>();
-    const consonantFreq = new Map<string, number>();
-
-    // Count frequencies
-    for (const ch of s) {
-        if (vowels.has(ch)) {
-            vowelFreq.set(ch, (vowelFreq.get(ch) ?? 0) + 1);
-        } else {
-            consonantFreq.set(ch, (consonantFreq.get(ch) ?? 0) + 1);
-        }
-    }
-
-    let maxVowel = 0;
-    let maxConsonant = 0;
-
-    // Find max vowel frequency
-    for (const freq of vowelFreq.values()) {
-        maxVowel = Math.max(maxVowel, freq);
-    }
-
-    // Find max consonant frequency
-    for (const freq of consonantFreq.values()) {
-        maxConsonant = Math.max(maxConsonant, freq);
-    }
-        console.log('consonent', maxConsonant)
-        console.log('vowel', maxVowel)
-
-    console.log(maxVowel)
-    console.log(maxConsonant)
-    return maxVowel + maxConsonant;
-}
 
 // console.log(maxFreqSum("og"));          // 2
 // console.log(maxFreqSum("successes"));       // 1
-console.log(maxFreqSum("aeiaeia"));      // 6
+
+function missingNumber(nums: number[]){
+    let misNumber: number[] = []
+    for (const num of nums){
+        misNumber[num] = num as number
+    }
+    for (const [key, val] of misNumber.entries()){
+       console.log(key, val)
+    }
+};
+missingNumber([3, 0, 1])
