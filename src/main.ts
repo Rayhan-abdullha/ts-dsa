@@ -80,3 +80,4 @@ bst.insert(200)
 
 // console.log(maxFreqSum("og"));          // 2
 // console.log(maxFreqSum("successes"));       // 1
+
