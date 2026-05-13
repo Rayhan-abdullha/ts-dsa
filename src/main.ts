@@ -26,73 +26,54 @@ getProperty(user, "name");
 
 */
 
-class Node<T>{
-    val: T
-    left: Node<T> | null
-    right: Node<T> | null
-    constructor(val: T){
-        this.val = val
-        this.left = null
-        this.right = null
-    }
+class Node<T> {
+  val: T;
+  left: Node<T> | null;
+  right: Node<T> | null;
+  constructor(val: T) {
+    this.val = val;
+    this.left = null;
+    this.right = null;
+  }
 }
 class BinarySearchTree<T> {
-    root: Node<T> | null
-    constructor(){
-        this.root = null
+  root: Node<T> | null;
+  constructor() {
+    this.root = null;
+  }
+  insert(val: T) {
+    const newNode = new Node<T>(val);
+    if (!this.root) {
+      this.root = newNode;
+      return this;
     }
-    insert(val: T){
-        const newNode = new Node<T>(val)
-        if (!this.root){
-            this.root = newNode
-            return this
+    let currentNode = this.root;
+    while (true) {
+      if (currentNode.val < val) {
+        if (currentNode.right === null) {
+          currentNode.right = newNode;
+          return this;
         }
-        let currentNode = this.root
-        while (true){
-            if (currentNode.val < val){
-                if (currentNode.right === null){
-                    currentNode.right = newNode
-                    return this
-                } 
-                currentNode = currentNode.right
-            } else {
-                if (currentNode.left === null){
-                    currentNode.left = newNode
-                    return
-                }
-                currentNode = currentNode.left
-            }
+        currentNode = currentNode.right;
+      } else {
+        if (currentNode.left === null) {
+          currentNode.left = newNode;
+          return;
         }
+        currentNode = currentNode.left;
+      }
     }
-    search(val: T){
-
-    }
+  }
+  search(val: T) {}
 }
 
-
-const bst = new BinarySearchTree<number>()
-bst.insert(10)
-bst.insert(20)
-bst.insert(1)
-bst.insert(2)
-bst.insert(200)
+const bst = new BinarySearchTree<number>();
+bst.insert(10);
+bst.insert(20);
+bst.insert(1);
+bst.insert(2);
+bst.insert(200);
 // console.log(bst)
 
 // console.log(maxFreqSum("og"));          // 2
 // console.log(maxFreqSum("successes"));       // 1
-
-function thirdMax(nums: number[]): number {
-    let stack: number[] = []
-    for (const val of nums){
-        const top = (stack.length-1) as number
-        if (top === -1){
-            stack.push(val)
-        } else {
-            if (val > top){
-                stack.push(val)
-            }
-        }
-    }
-    return stack[stack.length-1]!
-};
-thirdMax([3,2,1])
