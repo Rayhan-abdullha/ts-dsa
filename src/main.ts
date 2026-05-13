@@ -81,17 +81,18 @@ bst.insert(200)
 // console.log(maxFreqSum("og"));          // 2
 // console.log(maxFreqSum("successes"));       // 1
 
-function numJewelsInStones(jewels: string, stones: string) {
-    const freqStone = new Set(jewels)
-    let count = 0
-    freqStone.forEach(ch => {
-        for (let i = 0; i < stones.length; i++){
-            if (ch === stones[i]){
-                count++
+function thirdMax(nums: number[]): number {
+    let stack: number[] = []
+    for (const val of nums){
+        const top = (stack.length-1) as number
+        if (top === -1){
+            stack.push(val)
+        } else {
+            if (val > top){
+                stack.push(val)
             }
         }
-    })
-    return count
-    
+    }
+    return stack[stack.length-1]!
 };
-console.log(numJewelsInStones("aA", "aAAbbbb"))
+thirdMax([3,2,1])
