@@ -11,3 +11,5 @@ function findWordsContaining(words: string[], x: string): number[] {
   }
   return Array.from(res);
 }
+findWordsContaining(["hello", "world", "hi", "test"], "o"); // [0, 1]
+findWordsContaining(["apple", "banana", "cherry"], "a");
