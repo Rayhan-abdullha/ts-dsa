@@ -25,3 +25,9 @@ getProperty(user, "name");
 "John Doe";
 
 */
+// ()
+// [({})]
+// [{}()]
+
+// [3, 2, 7, 3, 9] , targt = 9
+//
